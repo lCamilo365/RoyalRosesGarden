@@ -27,4 +27,6 @@
     // Strings Product
     <string name="btn_product_back">Back</string>
 
+    <string name="btn_product_info">Info</string>
+
 </resources>
