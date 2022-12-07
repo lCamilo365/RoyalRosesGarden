@@ -9,23 +9,25 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Product extends AppCompatActivity {
+public class Product_Info extends AppCompatActivity {
     private Button btnProductBack;
-    private TextView textProductTitle, textProductPrice;
+    private TextView textProductTitle, textProductDescription, textProductPrice;
     private ImageView imgProduct;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.product);
+        setContentView(R.layout.product_info);
 
         btnProductBack = (Button) findViewById(R.id.btnProductBack);
         textProductTitle = (TextView) findViewById(R.id.textProductTitle);
+        textProductDescription = (TextView) findViewById(R.id.textProductDescription);
         textProductPrice = (TextView) findViewById(R.id.textProductPrice);
         imgProduct = (ImageView) findViewById(R.id.imgProduct);
 
         Intent intentIn = getIntent();
-        textProductTitle.setText(intentIn.getStringExtra("title"));
+        textProductTitle.setText(intentIn.getStringExtra("name"));
+        textProductDescription.setText(intentIn.getStringExtra("description"));
         textProductPrice.setText(intentIn.getStringExtra("price"));
 
         int codeImage = intentIn.getIntExtra("imageCode",0);
