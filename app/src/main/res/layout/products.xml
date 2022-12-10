@@ -16,17 +16,17 @@
             android:id="@+id/textProducts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="50dp"
             android:fontFamily="cursive"
-            android:text="@string/text_title_prods_boxes"
             android:textColor="@color/purple_200"
-            android:textSize="50dp" />
+            android:text="@string/text_title_prods_boxes" />
 
         <Button
             android:id="@+id/btnBackProducts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_back_products"
-            app:icon="?attr/actionModeCloseDrawable" />
+            app:icon="?attr/actionModeCloseDrawable"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,133 +34,10 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <LinearLayout
+            <ListView
+                android:id="@+id/listViewProducts"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imgJungleNightBox"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_weight="1"
-
-                    app:srcCompat="@drawable/boxes_junglenightbox" />
-
-                <TextView
-                    android:id="@+id/textProdsJungleNightBox"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/text_title_prods_jungle_night_box"
-                    android:textColor="@color/teal_200" />
-
-                <Button
-                    android:id="@+id/btnProdsJungleNightBox"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/btn_prods_jungle_night_box"
-                    app:icon="@android:drawable/ic_menu_view" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imgRaspberryBox"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/boxes_raspberrybox"
-                    tools:srcCompat="@drawable/boxes_raspberrybox" />
-
-                <TextView
-                    android:id="@+id/textProdsRaspberryBox"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/text_title_prods_raspberry_box"
-                    android:textColor="@color/teal_200" />
-
-                <Button
-                    android:id="@+id/btnProdsRaspberryBox"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/btn_prods_raspberry_box"
-                    app:icon="@android:drawable/ic_menu_view" />
-            </LinearLayout>
-
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imgProdsPinkBox"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/boxes_pinkbox"
-                    tools:srcCompat="@drawable/boxes_pinkbox" />
-
-                <TextView
-                    android:id="@+id/textProdsPinkBox"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/text_title_prods_pink_box"
-                    android:textColor="@color/teal_200" />
-
-                <Button
-                    android:id="@+id/btnProdsPinkBox"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/btn_prods_pink_box"
-                    app:icon="@android:drawable/ic_menu_view" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imgProdsBlueBox"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/boxes_bluebox"
-                    tools:srcCompat="@drawable/boxes_bluebox" />
-
-                <TextView
-                    android:id="@+id/textProdsBlueBox"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/text_title_prods_blue_box"
-                    android:textColor="@color/teal_200" />
-
-                <Button
-                    android:id="@+id/btnProdsBlueBox"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/btn_prods_blue_box"
-                    app:icon="@android:drawable/ic_menu_view" />
-            </LinearLayout>
-
+                android:layout_height="match_parent" />
         </LinearLayout>
     </LinearLayout>
 
