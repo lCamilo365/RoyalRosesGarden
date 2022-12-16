@@ -1,21 +1,29 @@
 package com.example.royalrosesgarden;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 
-import com.example.royalrosesgarden.Adapters.ProductAdapter;
 
 import java.util.ArrayList;
+
+import com.example.royalrosesgarden.Adapters.ProductAdapter;
+import com.example.royalrosesgarden.DB.DBHelper;
 import com.example.royalrosesgarden.Entities.Product;
+import com.example.royalrosesgarden.Services.ProductService;
 
 public class Products extends AppCompatActivity {
-
+    private DBHelper dbHelper;
+    private ProductService productService;
     private ListView listViewProduct;
     private ArrayList<Product> arrayProducts;
     private ProductAdapter productAdapter;
@@ -28,18 +36,32 @@ public class Products extends AppCompatActivity {
 
         btnBackProducts = (Button) findViewById(R.id.btnBackProducts);
         arrayProducts = new ArrayList<>();
+        dbHelper = new DBHelper(this);
+        productService = new ProductService();
 
 
-        Product product1 = new Product(R.drawable.boxes_bluebox,  "Blue",  "Blue Box",  49.8);
-        Product product2 = new Product(R.drawable.boxes_junglenightbox,  "Night",  "Jungle Night Box",  64.5);
-        Product product3 = new Product(R.drawable.boxes_pinkbox,  "Pink",  "Pink Box",  51.75);
-        Product product4 = new Product(R.drawable.boxes_raspberrybox,  "Raspberry",  "Raspberry Box",  51);
 
-        arrayProducts.add(product1);
-        arrayProducts.add(product2);
-        arrayProducts.add(product3);
-        arrayProducts.add(product4);
-
+        try{
+            dbHelper = new DBHelper(this);
+            // Insertas datos manualmente. La base de datos está vacia
+/*
+                byte[] img = "".getBytes();
+                dbHelper.insertData("Blue",  "Blue Box",  49.8, img);
+                dbHelper.insertData("Night",  "Jungle Night Box",  64.5, img);
+                dbHelper.insertData("Pink",  "Pink Box",  51.75, img);
+                dbHelper.insertData("Raspberry",  "Raspberry Box",  51.0, img);
+                Toast.makeText(this,"INSERTAR DATOS",Toast.LENGTH_LONG).show();
+*/
+            // fin insertar datos
+            productService = new ProductService();
+            Cursor cursor = dbHelper.getData();
+            arrayProducts = productService.cursorToArray(cursor);
+            //Toast.makeText(this,"TRAER DATOS",Toast.LENGTH_LONG).show();
+            //Log.d("mostrar ",String.valueOf(arrayProducts.size()));
+        }catch (Exception e){
+            Log.e("Database", e.toString());
+            //Toast.makeText(this, e.getMessage(),Toast.LENGTH_LONG).show();
+        }
 
         productAdapter = new ProductAdapter(this, arrayProducts);
 
@@ -53,67 +75,24 @@ public class Products extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-/*
-        btnProdsJungleNightBox = (Button) findViewById(R.id.btnProdsJungleNightBox);
-        btnProdsRaspberryBox = (Button) findViewById(R.id.btnProdsRaspberryBox);
-        btnProdsPinkBox = (Button) findViewById(R.id.btnProdsPinkBox);
-        btnProdsBlueBox = (Button) findViewById(R.id.btnProdsBlueBox);
-
-        textProdsJungleNightBox = (TextView) findViewById(R.id.textProdsJungleNightBox);
-        textProdsRaspberryBox = (TextView) findViewById(R.id.textProdsRaspberryBox);
-        textProdsPinkBox = (TextView) findViewById(R.id.textProdsPinkBox);
-        textProdsBlueBox = (TextView) findViewById(R.id.textProdsBlueBox);
-
-
-        btnProdsJungleNightBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Product.class);
-                intent.putExtra("title", textProdsJungleNightBox.getText().toString());
-                intent.putExtra("price", "USD $64.8");
-                intent.putExtra("imageCode", R.drawable.boxes_junglenightbox);
-
-                startActivity(intent);
-            }
-        });
-
-        btnProdsRaspberryBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Product.class);
-                intent.putExtra("title", textProdsRaspberryBox.getText().toString());
-                intent.putExtra("price", "USD $50.0");
-                intent.putExtra("imageCode", R.drawable.boxes_raspberrybox);
-
-                startActivity(intent);
-            }
-        });
-
-        btnProdsPinkBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Product.class);
-                intent.putExtra("title", textProdsPinkBox.getText().toString());
-                intent.putExtra("price", "USD $51.25");
-                intent.putExtra("imageCode", R.drawable.boxes_pinkbox);
-
-                startActivity(intent);
-            }
-        });
-
-        btnProdsBlueBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Product.class);
-                intent.putExtra("title", textProdsBlueBox.getText().toString());
-                intent.putExtra("price", "USD $49.80");
-                intent.putExtra("imageCode", R.drawable.boxes_bluebox);
-
-                startActivity(intent);
-            }
-        });
-*/
-
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.actionAddProduct:
+                Intent intent = new Intent(getApplicationContext(), Product_form.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 }

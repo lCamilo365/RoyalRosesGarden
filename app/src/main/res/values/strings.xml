@@ -9,18 +9,6 @@
     // Strings Products
     <string name="text_title_prods_boxes">Products</string>
 
-    <string name="text_title_prods_jungle_night_box">Jungle Night Box</string>
-    <string name="btn_prods_jungle_night_box">Info</string>
-
-    <string name="text_title_prods_raspberry_box">Raspberry Box</string>
-    <string name="btn_prods_raspberry_box">Info</string>
-
-    <string name="text_title_prods_pink_box">Pink Box</string>
-    <string name="btn_prods_pink_box">Info</string>
-
-    <string name="text_title_prods_blue_box">Blue Box</string>
-    <string name="btn_prods_blue_box">Info</string>
-
     <string name="btn_back_products">Home</string>
 
 
@@ -28,5 +16,16 @@
     <string name="btn_product_back">Back</string>
 
     <string name="btn_product_info">Info</string>
+
+    // Strings product_form
+    <string name="text_name_product_form">Name</string>
+    <string name="text_description_product_form">Description</string>
+    <string name="text_price_product_form">Price</string>
+
+    <string name="btn_product_form_get">Get</string>
+    <string name="btn_product_form_delete">Delete</string>
+    <string name="btn_product_form_update">Update</string>
+    <string name="btn_product_form_insert">Insert</string>
+
 
 </resources>

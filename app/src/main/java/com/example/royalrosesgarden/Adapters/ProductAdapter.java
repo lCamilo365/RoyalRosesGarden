@@ -2,6 +2,8 @@ package com.example.royalrosesgarden.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,7 +57,11 @@ public class ProductAdapter extends BaseAdapter {
         TextView textPriceTemplate = (TextView) view.findViewById(R.id.textPriceTemplate);
         Button btnProductTemplate = (Button)  view.findViewById(R.id.btnProductTemplate);
 
-        imgProductTemplate.setImageResource(product.getImage());
+        //imgProductTemplate.setImageResource(product.getImage());
+        byte[] image = product.getImage();
+        Bitmap bitmap  = BitmapFactory.decodeByteArray(image, 0, image.length );
+        imgProductTemplate.setImageBitmap(bitmap);
+
         textNameTemplate.setText(product.getName());
         textDescriptionTemplate.setText(product.getDescription());
         textPriceTemplate.setText("USD $" + String.valueOf(product.getPrice()));
@@ -67,11 +73,11 @@ public class ProductAdapter extends BaseAdapter {
             public void onClick(View view) {
                 Intent intent = new Intent(context.getApplicationContext(), Product_Info.class);
                 //Toast.makeText(context.getApplicationContext(), "Press " + product.getName(), Toast.LENGTH_SHORT).show();
-
-                intent.putExtra("name", product.getName());
-                intent.putExtra("description", product.getDescription());
-                intent.putExtra("price", "USD $" + String.valueOf(product.getPrice()));
-                intent.putExtra("imageCode", product.getImage());
+                intent.putExtra("id", String.valueOf(product.getId()));
+                //intent.putExtra("name", product.getName());
+                //intent.putExtra("description", product.getDescription());
+                //intent.putExtra("price", "USD $" + String.valueOf(product.getPrice()));
+                //intent.putExtra("imageCode", product.getImage());
                 context.startActivity(intent);
 
             }
