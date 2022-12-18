@@ -19,7 +19,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textWelcomeHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="cursive"
@@ -28,7 +27,6 @@
                 android:textSize="60sp" />
 
             <TextView
-                android:id="@+id/textNameHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
@@ -44,7 +42,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed-medium"
