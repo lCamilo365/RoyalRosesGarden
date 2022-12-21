@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">Royal Roses Garden</string>
+    // Strings Home
+    <string name="btn_init">Products</string>
+    <string name="text_welcome_home">Welcome!</string>
+    <string name="text_name_home">Royal Roses Garden</string>
+    <string name="text_description_home">When there is a special moment or person, the best are roses to show it.</string>
+
+    // Strings Products
+    <string name="text_title_prods_boxes">Products</string>
+
+    <string name="btn_back_products">Home</string>
+
+
+    // Strings Product
+    <string name="btn_product_back">Back</string>
+
+    <string name="btn_product_info">Info</string>
+
+    // Strings Product info
+
+    Location
+    <string name="btn_product_Location_info">Location</string>
+
+    // Strings product_form
+    <string name="text_name_product_form">Name</string>
+    <string name="text_description_product_form">Description</string>
+    <string name="text_price_product_form">Price</string>
+    <string name="text_Latitude_Form_Product">Latitude</string>
+    <string name="text_Longitude_Form_Product">Longitude</string>
+
+    <string name="btn_product_form_get">Get</string>
+    <string name="btn_product_form_delete">Delete</string>
+    <string name="btn_product_form_update">Update</string>
+    <string name="btn_product_form_insert">Insert</string>
+
+    // Strings Login
+    <string name="text_Email_Login">Email</string>
+    <string name="text_Password_Login">Password</string>
+
+    <string name="btn_Sign_In_Login">Sign in</string>
+    <string name="btn_Sign_Up_Login">Sign up</string>
+
+    // Strings Register
+    <string name="text_Email_Register">Email</string>
+    <string name="text_Password_Register">Password</string>
+    <string name="text_Password_Confirm_Register">Confirm</string>
+
+    <string name="btn_Sign_Up_Register">Sign up</string>
+
+    // Strings Maps
+    <string name="text_View_Maps">Our Points of Sale</string>
+
+
+</resources>

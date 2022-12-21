@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "691582508167",
+    "project_id": "royalrosesgarden-4938e",
+    "storage_bucket": "royalrosesgarden-4938e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:691582508167:android:b0802767bd43875210ec22",
+        "android_client_info": {
+          "package_name": "com.example.royalrosesgarden"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "691582508167-d2opdmg63oa40ib1uidn48901ak5hpvi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfZXjH00FmgiSguagHkf3_WR7hGENki_A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "691582508167-d2opdmg63oa40ib1uidn48901ak5hpvi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
